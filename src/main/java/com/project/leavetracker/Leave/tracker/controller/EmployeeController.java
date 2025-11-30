@@ -6,7 +6,6 @@ import com.project.leavetracker.Leave.tracker.exception.ResourceNotFoundExceptio
 import com.project.leavetracker.Leave.tracker.repository.EmployeeRepository;
 import com.project.leavetracker.Leave.tracker.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +32,6 @@ public class EmployeeController {
                 employee.getEmail(),
                 employee.getRoles().stream().map(role -> role.getName().toString()).collect(Collectors.toSet())
         );
-
         return ResponseEntity.ok(employeeResponse);
     }
 }
