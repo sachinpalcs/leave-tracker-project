@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class NotificationEvent {
     private String recipientEmail;
     private String subject;
-    private String message;
+    private String body;
     private Long leaveRequestId;
 }

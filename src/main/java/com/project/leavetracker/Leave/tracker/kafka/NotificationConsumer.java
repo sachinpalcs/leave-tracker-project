@@ -3,9 +3,9 @@ package com.project.leavetracker.Leave.tracker.kafka;
 import com.project.leavetracker.Leave.tracker.dto.NotificationEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 @Slf4j
 public class NotificationConsumer {
     @KafkaListener(topics = "leave-notifications", groupId = "leave-tracker-group")
@@ -18,5 +18,6 @@ public class NotificationConsumer {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+        log.info(" Email Sent Successfully!");
     }
 }
